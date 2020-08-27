@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test page</title>
+<title>Test Client</title>
 </head>
 <body>
 
 <h1>Testing 1, 2, 3 ...</h1>
-<p>Hello from ???.</p>
+<p>Hello from Client.</p>
 
 </body>
 </html>

@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
       # (Look inside test-website.conf for specifics.)
       cp /vagrant/client.conf /etc/apache2/sites-available/
       # activate our website configuration ...
-      a2ensite client-server
+      a2ensite client
       # ... and disable the default website provided with Apache
       a2dissite 000-default
       # Reload the webserver configuration, to pick up our changes
@@ -99,7 +99,7 @@ Vagrant.configure("2") do |config|
       # (Look inside test-website.conf for specifics.)
       cp /vagrant/admin.conf /etc/apache2/sites-available/
       # activate our website configuration ...
-      a2ensite admin-server
+      a2ensite admin
       # ... and disable the default website provided with Apache
       a2dissite 000-default
       # Reload the webserver configuration, to pick up our changes
