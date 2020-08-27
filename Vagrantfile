@@ -78,6 +78,9 @@ Vagrant.configure("2") do |config|
       echo "GRANT ALL PRIVILEGES ON fvision.* TO 'webuser'@'%'" | mysql
       export MYSQL_PWD='insecure_db_pw'
 
+      # run database setup
+      cat /vagrant/setup-database.sql | mysql -u webuser fvision
+
       sed -i'' -e '/bind-address/s/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
       service mysql restart
     SHELL
