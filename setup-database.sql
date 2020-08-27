@@ -1,44 +1,62 @@
-DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS item;
-DROP TABLE IF EXISTS order;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS orders;
 
-CREATE TABLE user (
-    username VARCHAR2(15) PRIMARY KEY,
-    passsword VARCHAR2(15) NOT NULL
+CREATE TABLE users(
+    username VARCHAR(15) PRIMARY KEY,
+    pass VARCHAR(15) NOT NULL
 );
 
-INSERT INTO user VALUES 
+INSERT INTO users VALUES 
 ('admin', 'root');
 
 
-CREATE TABLE item (
-    id SMALLINT PRIMARY KEY,
-    item_name VARCHAR2(20) NOT NULL,
+CREATE TABLE items (
+    item_id SMALLINT PRIMARY KEY,
+    item_name VARCHAR(20) NOT NULL,
     item_price DECIMAL(6,2) NOT NULL,
-    item_description VARCHAR2(100),
-    item_image VARCHAR2(100) NOT NULL
+    item_description VARCHAR(100),
+    item_image VARCHAR(100) NOT NULL
 );
 
-INSERT INTO item VALUES
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS orders;
+
+CREATE TABLE users(
+    username VARCHAR(15) PRIMARY KEY,
+    pass VARCHAR(15) NOT NULL
+);
+
+INSERT INTO users VALUES 
+('admin', 'root');
+
+
+CREATE TABLE items (
+    item_id SMALLINT PRIMARY KEY,
+    item_name VARCHAR(20) NOT NULL,
+    item_price DECIMAL(6,2) NOT NULL,
+    item_description VARCHAR(100),
+    item_image VARCHAR(100) NOT NULL
+);
+
+INSERT INTO items VALUES
 ('1', 'chair', 14.99, "a simple chair", "images/chair.png");
 
-INSERT INTO item VALUES
+INSERT INTO items VALUES
 ('2', 'table', 24.99, "a simple table", "images/table.png");
 
-INSERT INTO item VALUES
+INSERT INTO items VALUES
 ('3', 'toaster', 49.99, "toaster with many functions", "images/toaster.png");
 
-INSERT INTO item VALUES
+INSERT INTO items VALUES
 ('4', 'pan', 19.99, "a non-stick pan", "images/pan.png");
 
-CREATE TABLE order (
-    id SMALLINT PRIMARY KEY,
-    item_id SMALLINT NOT NULL
-     CONSTRAINT ItemPurchased REFERENCES item(id),
-    cust_name VARCHAR2(15) NOT NULL,
-    cust_email VARCHAR2(30) NOT NULL,
-    cust_address VARCHAR2(100) NOT NULL,
-    shipped number(1) NOT NULL
+CREATE TABLE orders (
+    order_id SMALLINT PRIMARY KEY,
+    item_id SMALLINT NOT NULL,
+    cust_name VARCHAR(15) NOT NULL,
+    cust_email VARCHAR(30) NOT NULL,
+    cust_address VARCHAR(100) NOT NULL,
+    shipped SMALLINT NOT NULL
 );
-
-COMMIT;
