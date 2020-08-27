@@ -1,26 +1,38 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
-Vagrant.configure("2") do |config|
-  # The most common configuration options are documented and commented below.
-  # For a complete reference, please see the online documentation at
-  # https://docs.vagrantup.com.
+# A Vagrantfile to set up three VMs, a webserver for client interaction,
+# a webserver for admin display purposes and a database server,
+# connected together using an internal network with manually-assigned
+# IP addresses for the VMs.
 
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://vagrantcloud.com/search.
+Vagrant.configure("2") do |config|
+  # Box previously used in labs, so reusing it here should save a
+  # bit of time by using a cached copy.
+
   config.vm.box = "ubuntu/xenial64"
 
   ## Front end web server.
   config.vm.define "webserver" do |webserver|
+    
+    # These are options specific to the webserver VM.
     webserver.vm.hostname = "webserver"
+    
+    # The port forwrading here allows our host computer to be able to
+    # connect to IP address 127.0.0.1 port 8080, and that network
+    # request will reach our webserver VM's port 80.
+
     webserver.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+    
+    # We set up a private network that our VMs will use to communicate
+    # with each other.
+
     webserver.vm.network "private_network", ip: "192.168.2.11"
+
+    # CS Lab permissions for shared Vagrant folder.
     webserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
 
+    # Specifying the shell commands to provision the webserver VM.
     webserver.vm.provision "shell", inline: <<-SHELL
       echo "Starting webserver"
       apt-get update
@@ -41,6 +53,9 @@ Vagrant.configure("2") do |config|
   ## Used to store products, administrator login credentials and orders.
   config.vm.define "dbserver" do |dbserver|
     dbserver.vm.hostname = "dbserver"
+    
+    # No VMs should attempt to use the same IP address
+    # on the private_network as the other.
     dbserver.vm.network "private_network", ip: "192.168.2.12"
     dbserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
     
