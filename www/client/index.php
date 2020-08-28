@@ -21,10 +21,18 @@ include('private/sql.php');
                     <h2 class="product-name"><?php echo $name; ?></h2>
                     <h3 class="product-price"><?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
+                    <input type="submit" class="button" name="buy" value="buy">
                 </div><?php
             }
         } else {
             echo "fail";
         }
+
+
         ?>
 </section>
+
+
+$(document).ready(function() {
+    $()
+}
