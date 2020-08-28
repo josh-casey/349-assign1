@@ -2,16 +2,6 @@
 $scriptList = array('js/jquery-3.5.1.min.js');
 include('private/header.php');
 include('private/sql.php');
-/*
-function get_products() {
-    $sql = "SELECT * FROM items";
-    $query = $connect->query($sql);
-    echo $connect->query;
-    $result = array();
-
-    return $result;
-}*/
-
 ?>
 
 <section id="products">
@@ -20,24 +10,21 @@ function get_products() {
         $result = $db->query($sql);
 
         if ($result->num_rows > 0) {
-            echo "test";
+            while ($product = $result->fetch_assoc()) {
+                $name = $product['item_name'];
+                $price = $product['item_price'];
+                $description = $product['item_description'];
+                $image = $product['item_image'];
+                $id = $product['item_id'];
+                ?>
+                <div class="product-section">
+                    <h2 class="product-name"><?php echo $name; ?></h2>
+                    <h3 class="product-price"><?php echo $price; ?></h3>
+                    <p><?php echo $description?></p>
+                </div><?php
+            }
         } else {
             echo "fail";
         }
-    
-/*
-        while ($product = $result->fetch_assoc()) {
-            $name = $product['item_name'];
-            $price = $product['item_price'];
-            $description = $product['item_description'];
-            $image = $product['item_image'];
-            ?>
-            <div class="product-section">
-            <h1 class="product-name"><?php echo $name; ?></h1>
-            </div>
-        <?php
-        }
         ?>
-*/
-?>
 </section>
