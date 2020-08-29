@@ -5,8 +5,8 @@ var Shop = (function () {
     
 
     function purchaseItem() {
-        $("#buy").click(function () {
-            var buttonVal = $(this).val();
+        $(".button").click(function () {
+            var buttonVal = $(".product-name").val();
             var ajaxurl = 'ajax.php',
             data = {'action': buttonVal};
             $.post(ajaxurl, data, function(respose) {

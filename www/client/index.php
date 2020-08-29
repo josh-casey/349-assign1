@@ -22,17 +22,20 @@ include('private/sql.php');
                     <h3 class="product-price"><?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
                     <input type="submit" class="button" name="buy" value="buy">
-                </div><?php
+                </div>
+                <?php
             }
         } else {
             echo "fail";
         }
-
-
         ?>
 </section>
+<section class="customer-form">
+    <form>
+        <input type="text" name="name" value="Name">
+        <input type="text" name="email" value="E-mail">
+        <input type="text" name="address" value="Address">
+        <input type="text" name="phone" value="Phone Number">
+    </form>
+</section>
 
-
-$(document).ready(function() {
-    $()
-}
