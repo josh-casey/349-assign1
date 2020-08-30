@@ -32,15 +32,6 @@ INSERT INTO items VALUES
 ('4', 'pan', 19.99, "a non-stick pan", "images/pan.png");
 
 CREATE TABLE orders (
-<<<<<<< HEAD
-order_id SMALLINT NOT NULL AUTO_INCREMENT,
-item_id SMALLINT NOT NULL,
-cust_name VARCHAR(15) NOT NULL,
-cust_email VARCHAR(30) NOT NULL,
-cust_address VARCHAR(100) NOT NULL,
-shipped SMALLINT NOT NULL,
-PRIMARY KEY (order_id)
-=======
     order_id SMALLINT NOT NULL AUTO_INCREMENT,
     item_id SMALLINT NOT NULL,
     cust_name VARCHAR(15) NOT NULL,
@@ -48,5 +39,4 @@ PRIMARY KEY (order_id)
     cust_address VARCHAR(100) NOT NULL,
     shipped SMALLINT NOT NULL,
     PRIMARY KEY (order_id)
->>>>>>> afefe963e350a77c272b858c3203e1ec122a8d82
 );
