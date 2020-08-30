@@ -1,5 +1,5 @@
 <?php
-$scriptList = array('js/jquery-3.5.1.min.js', 'js/shop.js', 'cart.js');
+$scriptList = array('js/jquery-3.5.1.min.js', 'js/shop.js', 'js/cart.js');
 include('private/header.php');
 include('private/sql.php');
 ?>
@@ -21,7 +21,7 @@ include('private/sql.php');
                     <h2 class="product-name"><?php echo $name; ?></h2>
                     <h3 class="product-price"><?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
-                    <input type="submit" class="button" class="addToCart" name="addToCart" value="Add to Cart">
+                    <input type="submit" class="addToCart" value="Add to Cart">
                 </div>
                 <?php
             }
@@ -30,6 +30,7 @@ include('private/sql.php');
         }
         ?>
 </section>
+<section id="cartTable"></section>
 <section class="customer-form">
     <form>
         <h1>Shipping Information</h1>
@@ -37,6 +38,7 @@ include('private/sql.php');
         <input type="text" name="email" value="E-mail" id="email" required>
         <input type="text" name="address" value="Address" id="address" required>
         <input type="text" name="phone" value="Phone Number" id="phone" required>
+        <input type="submit" class="order" value ="Place Order"> 
     </form>
 </section>
 

@@ -13,12 +13,12 @@ var Cart = (function() {
         }
 
         /* jshint -W040 */
-        section = $($(this).parent().parent());
+        section = $(this).parent();
         /* jshint +W040 */
 
         item = {};
-        item.title = $(section.find("product-name")[0]).html();
-        item.price = $(section.find("product-price")[0]).html();
+        item.title = $(section.find(".product-name")[0]).html();
+        item.price = $(section.find(".product-price")[0]).html();
 
         itemList.push(item);
         window.localStorage.setItem("cart", JSON.stringify(itemList));
@@ -42,7 +42,8 @@ var Cart = (function() {
 
     pub.setup = function() {
         var itemList;
-        $(".buy").click(addToCart);
+        $(".addToCart").click(addToCart);
+        console.log("test")
 
         itemList = window.localStorage.getItem("cart");
         if (itemList) {

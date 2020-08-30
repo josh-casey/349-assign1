@@ -1,4 +1,4 @@
-.products {
+#products {
     width: 100%;
 }
 
@@ -8,5 +8,9 @@
 }
 
 .customer-form {
+    padding-top: 50px;
+}
+
+#cartTable {
     padding-top: 200px;
 }
