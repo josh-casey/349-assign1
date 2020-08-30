@@ -15,14 +15,7 @@ include('private/sql.php');
         <th>Order Status</th>
       </tr>
 
-      <?php
-
-      $sql = "SELECT * FROM orders";
-      $result = $db->query($sql);
-         
-         if ($result->num_rows > 0) {
-      while ($purchases = $result->fetch_assoc()) {
-
+     
 <?php
 $sql = "SELECT * FROM orders";
 $result = $db->query($sql);

@@ -38,7 +38,7 @@ include('private/sql.php');
         <input type="text" name="name" value="Name" id="name" required>
         <input type="text" name="email" value="E-mail" id="email" required>
         <input type="text" name="address" value="Address" id="address" required>
-        <input type="submit" id="order" value ="Place Order"> 
+        <input type="button" id="order" value ="Place Order"> 
     </form>
 </section>
 
