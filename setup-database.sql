@@ -1,23 +1,3 @@
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS items;
-DROP TABLE IF EXISTS orders;
-
-CREATE TABLE users(
-    username VARCHAR(15) PRIMARY KEY,
-    pass VARCHAR(15) NOT NULL
-);
-
-INSERT INTO users VALUES 
-('admin', 'root');
-
-
-CREATE TABLE items (
-    item_id SMALLINT PRIMARY KEY,
-    item_name VARCHAR(20) NOT NULL,
-    item_price DECIMAL(6,2) NOT NULL,
-    item_description VARCHAR(100),
-    item_image VARCHAR(100) NOT NULL
-);
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items;
