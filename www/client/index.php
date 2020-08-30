@@ -32,10 +32,11 @@ include('private/sql.php');
 </section>
 <section class="customer-form">
     <form>
-        <input type="text" name="name" value="Name">
-        <input type="text" name="email" value="E-mail">
-        <input type="text" name="address" value="Address">
-        <input type="text" name="phone" value="Phone Number">
+        <h1>Shipping Information</h1>
+        <input type="text" name="name" value="Name" id="name" required>
+        <input type="text" name="email" value="E-mail" id="email" required>
+        <input type="text" name="address" value="Address" id="address" required>
+        <input type="text" name="phone" value="Phone Number" id="phone" required>
     </form>
 </section>
 

@@ -1,0 +1,12 @@
+.products {
+    width: 100%;
+}
+
+.product-section {
+    width: 250px;
+    float: left;
+}
+
+.customer-form {
+    padding-top: 200px;
+}
