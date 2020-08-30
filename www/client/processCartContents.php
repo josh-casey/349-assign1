@@ -1,6 +1,5 @@
 <?php
 
-/** Fix items */
 include('private/sql.php');
 
 $name = $_POST['name'];

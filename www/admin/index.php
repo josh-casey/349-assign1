@@ -1,5 +1,5 @@
 <?php
-$scriptList = array('js/jquery-3.5.1.min.js');
+$scriptList = array('js/jquery-3.5.1.min.js', 'js/ship.js');
 include('private/header.php');
 include('private/sql.php');
 ?>
@@ -13,6 +13,7 @@ include('private/sql.php');
         <th>Customer Address</th>
         <th>Item ID</th>
         <th>Order Status</th>
+        <th>Status Toggle</th>
       </tr>
 
      
@@ -29,8 +30,11 @@ if ($result->num_rows > 0) {
       $orderId = $purchases['order_id'];
       $itemId = $purchases['item_id'];
       $status = $purchases['shipped'];
-     // $status = $purchases['shipped'];
-     $status = "Shipped";
+      if ($status = "1") {
+        $status = "Shipped";
+      } else {
+        $status = "Not Shipped";
+      }
 ?>
       
       <tr>
@@ -40,14 +44,12 @@ if ($result->num_rows > 0) {
         <td><?php echo $address; ?></td>
         <td><?php echo $itemId; ?></td>
         <td><?php echo $status ?></td>
-        <td><label for="shipped">Has the Order Been Shipped?</label>
-        <input type="button" value="Order Shipped" name="refresh" onclick="return RefreshWindow();"/></td>
+        <td>
+        <input type="button" value="Toggle Status" name="refresh" id="toggleShip"/></td>
          
       <!-- <td><?php echo $status; ?></td> -->
       </tr><?php
     }
-} else {
-    echo "fail";
 }
 ?>
     </table>
