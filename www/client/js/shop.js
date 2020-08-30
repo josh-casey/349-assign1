@@ -33,8 +33,9 @@ var Shop = (function () {
            /* var dataString = "name=" + customer.name + "&email=" + customer.email + "&address=" + customer.address + 
             "&items=as"; //+ customer.items + "&price=" + customer.price;*/
             $.ajax({
-                type:'POST',
-                data:formData,
+                type: 'POST',
+                data: formData,
+                dataType: 'text',
                 url: 'processCartContents.php',
                 success:function(resultData) {
                     alert("Success");

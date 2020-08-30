@@ -22,7 +22,14 @@ include('private/sql.php');
          
          if ($result->num_rows > 0) {
       while ($purchases = $result->fetch_assoc()) {
-      
+
+<?php
+$sql = "SELECT * FROM orders";
+$result = $db->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($purchases = $result->fetch_assoc()) {
+
       $name = $purchases['cust_name'];
       $email = $purchases['cust_email'];
       $address = $purchases['cust_address'];
@@ -46,5 +53,4 @@ include('private/sql.php');
 ?>
     </table>
   </div>
- 
 
