@@ -1,5 +1,5 @@
 <?php
-$scriptList = array('js/jquery-3.5.1.min.js');
+$scriptList = array('js/jquery-3.5.1.min.js', 'js/shop.js', 'cart.js');
 include('private/header.php');
 include('private/sql.php');
 ?>
@@ -21,7 +21,7 @@ include('private/sql.php');
                     <h2 class="product-name"><?php echo $name; ?></h2>
                     <h3 class="product-price"><?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
-                    <input type="submit" class="button" name="buy" value="buy">
+                    <input type="submit" class="button" class="addToCart" name="addToCart" value="Add to Cart">
                 </div>
                 <?php
             }
