@@ -1,11 +1,16 @@
 <?php
+
+/** Fix items */
 include('private/sql.php');
 
-$arr = json_decode(file_get_contents("php://input"));
-$name = $_SESSION['name'];
-$email = $_SESSION['email'];
-/*
-foreach ($arr as $value) {
-    sql = "INSERT INTO orders VALUES (" 
-}*/
+$name = $_POST['name'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$items = $_POST['items'];
+$price = $_POST['price'];
+
+
+$sql = "INSERT INTO orders VALUES ('0', '1', '$name', '$email', '$address', '0')";
+
+$result = $db->query($sql);
 ?>

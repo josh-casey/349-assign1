@@ -13,8 +13,14 @@ include('private/sql.php');
         <th>Customer Address</th>
         <th>Item ID</th>
         <th>Order Status</th>
+<<<<<<< HEAD
       </tr>  
 
+=======
+      </tr>
+
+     
+>>>>>>> afefe963e350a77c272b858c3203e1ec122a8d82
 <?php
 $sql = "SELECT * FROM orders";
 $result = $db->query($sql);

@@ -18,6 +18,7 @@ include('private/sql.php');
                 $id = $product['item_id'];
                 ?>
                 <div class="product-section">
+                    <p class="product-id"><?php echo $id;// remember to hide this?></p>
                     <h2 class="product-name"><?php echo $name; ?></h2>
                     <h3 class="product-price"><?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
@@ -37,8 +38,7 @@ include('private/sql.php');
         <input type="text" name="name" value="Name" id="name" required>
         <input type="text" name="email" value="E-mail" id="email" required>
         <input type="text" name="address" value="Address" id="address" required>
-        <input type="text" name="phone" value="Phone Number" id="phone" required>
-        <input type="submit" class="order" value ="Place Order"> 
+        <input type="button" id="order" value ="Place Order"> 
     </form>
 </section>
 
