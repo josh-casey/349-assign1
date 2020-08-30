@@ -33,7 +33,7 @@ INSERT INTO items VALUES
 
 CREATE TABLE orders (
     order_id SMALLINT NOT NULL AUTO_INCREMENT,
-    item_id SMALLINT NOT NULL,
+    item_id VARCHAR(100) NOT NULL,
     cust_name VARCHAR(15) NOT NULL,
     cust_email VARCHAR(30) NOT NULL,
     cust_address VARCHAR(100) NOT NULL,

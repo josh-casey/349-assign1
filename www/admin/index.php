@@ -3,7 +3,7 @@ $scriptList = array('js/jquery-3.5.1.min.js');
 include('private/header.php');
 include('private/sql.php');
 ?>
-
+<main>
   <div class = "table">
     <table class = "order-table">
       <tr>
@@ -13,14 +13,9 @@ include('private/sql.php');
         <th>Customer Address</th>
         <th>Item ID</th>
         <th>Order Status</th>
-<<<<<<< HEAD
-      </tr>  
-
-=======
       </tr>
 
      
->>>>>>> afefe963e350a77c272b858c3203e1ec122a8d82
 <?php
 $sql = "SELECT * FROM orders";
 $result = $db->query($sql);
@@ -58,3 +53,4 @@ if ($result->num_rows > 0) {
     </table>
   </div>
 
+</main>

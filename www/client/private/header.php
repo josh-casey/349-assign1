@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>349 SHOP</title>
+    <title>A Simple Shop</title>
     <?php
     if (isset($scriptList) && is_array($scriptList)){
         foreach ($scriptList as $script){

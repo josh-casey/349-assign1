@@ -17,7 +17,7 @@ var Shop = (function () {
 
             cartData = JSON.parse(cartData);
             for (i = 0; i < cartData.length; i++) {
-                customer.items += cartData[i].id + " ";
+                customer.items += "{" + cartData[i].id + ": " + cartData[i].name + "}";
                 customer.price += parseFloat(cartData[i].price);
             }
             customer.price = Math.round(customer.price * 100) / 100; // rounding
@@ -30,15 +30,12 @@ var Shop = (function () {
             }
 
             console.log(formData);
-           /* var dataString = "name=" + customer.name + "&email=" + customer.email + "&address=" + customer.address + 
-            "&items=as"; //+ customer.items + "&price=" + customer.price;*/
             $.ajax({
                 type: 'POST',
                 data: formData,
                 dataType: 'text',
                 url: 'processCartContents.php',
                 success:function(resultData) {
-                    alert("Success");
                     window.localStorage.clear();
                 },
                 error: function(data){
