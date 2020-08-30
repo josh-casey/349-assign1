@@ -4,26 +4,21 @@
    include('private/sql.php');
    ?>
 
-<section id="purchases">
-  <?php
-     $sql = "SELECT * FROM orders";
-     $result = $db->query($sql);
-  ?>
-  
   <div class = "table">
-    <table class = "order_table">
+    <table class = "order-table">
       <tr>
         <th>Order ID</th>
         <th>Customer Name</th>
         <th>Customer Email</th>
         <th>Customer Address</th>
         <th>Item ID</th>
-        // <th>Item Name</th>
-        // <th>Item Price</th>
         <th>Order Status</th>
       </tr>
 
       <?php
+
+      $sql = "SELECT * FROM orders";
+      $result = $db->query($sql);
          
          if ($result->num_rows > 0) {
       while ($purchases = $result->fetch_assoc()) {
@@ -52,8 +47,5 @@
               ?>
     </table>
   </div>
-</section>
+ 
 
-$(document).ready(function() {
-$()
-}
