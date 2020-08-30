@@ -1,15 +1,10 @@
 <?php
-   $scriptList = array('js/jquery-3.5.1.min.js');
-   include('private/header.php');
-   include('private/sql.php');
-   ?>
+$scriptList = array('js/jquery-3.5.1.min.js');
+include('private/header.php');
+include('private/sql.php');
+?>
 
 <section id="purchases">
-  <?php
-     $sql = "SELECT * FROM orders";
-     $result = $db->query($sql);
-  ?>
-  
   <div class = "table">
     <table class = "order_table">
       <tr>
@@ -18,24 +13,27 @@
         <th>Customer Email</th>
         <th>Customer Address</th>
         <th>Item ID</th>
-        // <th>Item Name</th>
-        // <th>Item Price</th>
+        <!--<th>Item Name</th>
+        <th>Item Price</th>-->
         <th>Order Status</th>
       </tr>
 
-      <?php
-         
-         if ($result->num_rows > 0) {
-      while ($purchases = $result->fetch_assoc()) {
-      
+<?php
+$sql = "SELECT * FROM orders";
+$result = $db->query($sql);
+
+echo $result;
+
+if ($result->num_rows > 0) {
+    while ($purchases = $result->fetch_assoc()) {
+      echo $name;
       $name = $purchases['cust_name'];
       $email = $purchases['cust_email'];
       $address = $purchases['cust_address'];
       $orderId = $purchases['order_id'];
       $itemId = $purchases['item_id'];
       $status = $purchases['shipped'];
-      
-      ?>
+?>
       
       <tr>
         <td><?php echo $orderId; ?></td>
@@ -45,15 +43,11 @@
         <td><?php echo $itemId; ?></td>
         <td><?php echo $status; ?></td>
       </tr><?php
-              }
-              } else {
-              echo "fail";
-              }
-              ?>
+    }
+} else {
+    echo "fail";
+}
+?>
     </table>
   </div>
 </section>
-
-$(document).ready(function() {
-$()
-}

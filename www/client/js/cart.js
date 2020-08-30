@@ -43,7 +43,6 @@ var Cart = (function() {
     pub.setup = function() {
         var itemList;
         $(".addToCart").click(addToCart);
-        console.log("test")
 
         itemList = window.localStorage.getItem("cart");
         if (itemList) {
