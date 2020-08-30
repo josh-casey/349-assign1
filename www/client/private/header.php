@@ -13,5 +13,5 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <header>
-    <h1>SHOP</h1>
+    <h1>Simple Shop</h1>
 </header>

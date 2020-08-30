@@ -4,6 +4,7 @@ include('private/header.php');
 include('private/sql.php');
 ?>
 
+<main>
 <section id="products">
     <?php
         $sql = "SELECT * FROM items";
@@ -18,8 +19,9 @@ include('private/sql.php');
                 $id = $product['item_id'];
                 ?>
                 <div class="product-section">
-                    <p class="product-id"><?php echo $id;// remember to hide this?></p>
+                    <p class="product-id"><?php echo $id;?></p>
                     <h2 class="product-name"><?php echo $name; ?></h2>
+                    <img src=<?php echo $image;?> width="125" height="125">
                     <h3 class="product-price"><?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
                     <input type="submit" class="addToCart" value="Add to Cart">
@@ -41,4 +43,4 @@ include('private/sql.php');
         <input type="button" id="order" value ="Place Order"> 
     </form>
 </section>
-
+</main>
