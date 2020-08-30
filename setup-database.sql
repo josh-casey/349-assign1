@@ -1,11 +1,10 @@
-
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS orders;
 
 CREATE TABLE users(
-    username VARCHAR(15) PRIMARY KEY,
-    pass VARCHAR(15) NOT NULL
+username VARCHAR(15) PRIMARY KEY,
+pass VARCHAR(15) NOT NULL
 );
 
 INSERT INTO users VALUES 
@@ -13,11 +12,11 @@ INSERT INTO users VALUES
 
 
 CREATE TABLE items (
-    item_id SMALLINT PRIMARY KEY,
-    item_name VARCHAR(20) NOT NULL,
-    item_price DECIMAL(6,2) NOT NULL,
-    item_description VARCHAR(100),
-    item_image VARCHAR(100) NOT NULL
+item_id SMALLINT PRIMARY KEY,
+item_name VARCHAR(20) NOT NULL,
+item_price DECIMAL(6,2) NOT NULL,
+item_description VARCHAR(100),
+item_image VARCHAR(100) NOT NULL
 );
 
 INSERT INTO items VALUES
@@ -33,10 +32,11 @@ INSERT INTO items VALUES
 ('4', 'pan', 19.99, "a non-stick pan", "images/pan.png");
 
 CREATE TABLE orders (
-    order_id SMALLINT PRIMARY KEY,
-    item_id SMALLINT NOT NULL,
-    cust_name VARCHAR(15) NOT NULL,
-    cust_email VARCHAR(30) NOT NULL,
-    cust_address VARCHAR(100) NOT NULL,
-    shipped SMALLINT NOT NULL
+order_id SMALLINT NOT NULL AUTO_INCREMENT,
+item_id SMALLINT NOT NULL,
+cust_name VARCHAR(15) NOT NULL,
+cust_email VARCHAR(30) NOT NULL,
+cust_address VARCHAR(100) NOT NULL,
+shipped SMALLINT NOT NULL,
+PRIMARY KEY (order_id)
 );

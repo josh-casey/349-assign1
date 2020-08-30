@@ -39,8 +39,10 @@ if ($result->num_rows > 0) {
         <td><?php echo $address; ?></td>
         <td><?php echo $itemId; ?></td>
         <td><?php echo $status ?></td>
+
+        <form action="#" method="post">
         <td><label for="shipped">Has the Order Been Shipped?</label>
-        <input type="button" value="Order Shipped" name="refresh" onclick="return RefreshWindow();"/></td>
+        <input type="button" value="Order Shipped" /></td>
          
       <!-- <td><?php echo $status; ?></td> -->
       </tr><?php
