@@ -17,7 +17,8 @@ var Cart = (function() {
         /* jshint +W040 */
 
         item = {};
-        item.title = $(section.find(".product-name")[0]).html();
+        item.id = $(section.find(".product-id")[0]).html();
+        item.name = $(section.find(".product-name")[0]).html();
         item.price = $(section.find(".product-price")[0]).html();
 
         itemList.push(item);
@@ -30,7 +31,7 @@ var Cart = (function() {
         html = "<table><tr><th>Title</th><th>Price</th></tr>";
         total = 0;
         for (i = 0; i < itemList.length; i++) {
-            html += "<tr><td>" + itemList[i].title + "</td><td>$" + itemList[i].price + "</td></tr>";
+            html += "<tr><td>" + itemList[i].name + "</td><td>$" + itemList[i].price + "</td></tr>";
             total += parseFloat(itemList[i].price);
         }
 

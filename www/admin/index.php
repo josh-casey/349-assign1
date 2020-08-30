@@ -4,10 +4,6 @@ include('private/header.php');
 include('private/sql.php');
 ?>
 
-<<<<<<< HEAD
-=======
-<section id="purchases">
->>>>>>> 7e1e2e9f702dd12bbd55bd472982e5234c3d72e5
   <div class = "table">
     <table class = "order-table">
       <tr>
@@ -16,7 +12,6 @@ include('private/sql.php');
         <th>Customer Email</th>
         <th>Customer Address</th>
         <th>Item ID</th>
-<<<<<<< HEAD
         <th>Order Status</th>
       </tr>
 
@@ -28,22 +23,6 @@ include('private/sql.php');
          if ($result->num_rows > 0) {
       while ($purchases = $result->fetch_assoc()) {
       
-=======
-        <!--<th>Item Name</th>
-        <th>Item Price</th>-->
-        <th>Order Status</th>
-      </tr>
-
-<?php
-$sql = "SELECT * FROM orders";
-$result = $db->query($sql);
-
-echo $result;
-
-if ($result->num_rows > 0) {
-    while ($purchases = $result->fetch_assoc()) {
-      echo $name;
->>>>>>> 7e1e2e9f702dd12bbd55bd472982e5234c3d72e5
       $name = $purchases['cust_name'];
       $email = $purchases['cust_email'];
       $address = $purchases['cust_address'];
@@ -67,9 +46,5 @@ if ($result->num_rows > 0) {
 ?>
     </table>
   </div>
-<<<<<<< HEAD
  
 
-=======
-</section>
->>>>>>> 7e1e2e9f702dd12bbd55bd472982e5234c3d72e5
