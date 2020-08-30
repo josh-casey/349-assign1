@@ -22,7 +22,7 @@ include('private/sql.php');
                     <p class="product-id"><?php echo $id;?></p>
                     <h2 class="product-name"><?php echo $name; ?></h2>
                     <img src=<?php echo $image;?> width="125" height="125">
-                    <h3 class="product-price"><?php echo $price; ?></h3>
+                    <h3 class="product-price">$<?php echo $price; ?></h3>
                     <p><?php echo $description?></p>
                     <input type="submit" class="addToCart" value="Add to Cart">
                 </div>

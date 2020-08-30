@@ -23,12 +23,13 @@ var Cart = (function() {
 
         itemList.push(item);
         window.localStorage.setItem("cart", JSON.stringify(itemList));
+        location.reload();
     }
 
     function cartHtml(itemList) {
         var html, total, i;
 
-        html = "<table><tr><th>Title</th><th>Price</th></tr>";
+        html = "<table><tr><th>Item</th><th>Price</th></tr>";
         total = 0;
         for (i = 0; i < itemList.length; i++) {
             html += "<tr><td>" + itemList[i].name + "</td><td>$" + itemList[i].price + "</td></tr>";
@@ -36,7 +37,7 @@ var Cart = (function() {
         }
 
         total = Math.round(total * 100) / 100; // rounding
-
+        html += "<tr><tr>";
         html += "<tr><td>Total:</td><td>$" + total + "</td>";
         return html;
     }
