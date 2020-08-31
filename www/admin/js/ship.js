@@ -14,7 +14,7 @@ var Ship = (function () {
                 dataType: 'text',
                 url: 'private/toggleShip.php',
                 success:function(resultData) {
-                    console.log(formData);
+                    window.location.reload();
                 },
                 error: function(data){
                     alert("Ajax Failed");

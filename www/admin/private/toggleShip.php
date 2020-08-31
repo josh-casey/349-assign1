@@ -12,4 +12,5 @@ if ($shipped == "Shipped") {
 }
 
 $result = $db->query($sql);
+
 ?>
