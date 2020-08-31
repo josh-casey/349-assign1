@@ -17,7 +17,7 @@ var Shop = (function () {
 
             cartData = JSON.parse(cartData);
             for (i = 0; i < cartData.length; i++) {
-                customer.items += "{" + cartData[i].id + ": " + cartData[i].name + "}";
+                customer.items += "[" + cartData[i].id + ": " + cartData[i].name + "],";
                 customer.price += parseFloat(cartData[i].price);
             }
             customer.price = Math.round(customer.price * 100) / 100; // rounding
@@ -34,7 +34,7 @@ var Shop = (function () {
                 type: 'POST',
                 data: formData,
                 dataType: 'text',
-                url: 'processCartContents.php',
+                url: 'private/processCartContents.php',
                 success:function(resultData) {
                     window.localStorage.clear();
                 },

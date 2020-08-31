@@ -3,11 +3,18 @@ var Ship = (function () {
 
     var pub = {};
     function toggleShip() {
-        $("#toggleShip").click(function() {
+        $(document).on("click","#toggleShip", function() {
+            var formData = {
+                'shipped': $(this).closest("tr").children('td:eq(5)').text(),
+                'order-id': $(this).closest("tr").children('td:eq(0)').text()
+            }
             $.ajax({
-                dataType: 'json',
-                url: 'toggleShip.php',
+                type: 'POST',
+                data: formData,
+                dataType: 'text',
+                url: 'private/toggleShip.php',
                 success:function(resultData) {
+                    console.log(formData);
                 },
                 error: function(data){
                     alert("Ajax Failed");

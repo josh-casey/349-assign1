@@ -11,7 +11,7 @@ include('private/sql.php');
         <th>Customer Name</th>
         <th>Customer Email</th>
         <th>Customer Address</th>
-        <th>Item ID</th>
+        <th>Items</th>
         <th>Order Status</th>
         <th>Status Toggle</th>
       </tr>
@@ -30,22 +30,22 @@ if ($result->num_rows > 0) {
       $orderId = $purchases['order_id'];
       $itemId = $purchases['item_id'];
       $status = $purchases['shipped'];
-      if ($status = "1") {
-        $status = "Shipped";
-      } else {
+
+      if ($status == '0') {
         $status = "Not Shipped";
+      } else {
+        $status = "Shipped";
       }
 ?>
       
-      <tr>
+      <tr id="order">
         <td><?php echo $orderId; ?></td>
         <td><?php echo $name; ?></td>
         <td><?php echo $email; ?></td>
         <td><?php echo $address; ?></td>
         <td><?php echo $itemId; ?></td>
-        <td><?php echo $status ?></td>
-        <td>
-        <input type="button" value="Toggle Status" name="refresh" id="toggleShip"/></td>
+        <td id="status"><?php echo $status ?></td>
+        <td><input type="button" value="Toggle Status" name="refresh" id="toggleShip"/></td>
          
       <!-- <td><?php echo $status; ?></td> -->
       </tr><?php
