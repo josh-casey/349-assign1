@@ -1,15 +1,5 @@
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS orders;
-
-CREATE TABLE users(
-username VARCHAR(15) PRIMARY KEY,
-pass VARCHAR(15) NOT NULL
-);
-
-INSERT INTO users VALUES 
-('admin', 'root');
-
 
 CREATE TABLE items (
 item_id SMALLINT PRIMARY KEY,
@@ -40,3 +30,6 @@ CREATE TABLE orders (
     shipped SMALLINT NOT NULL,
     PRIMARY KEY (order_id)
 );
+
+INSERT INTO orders VALUES
+('0', '[2: Table],', 'test_cust', 'testcust@email.com', '17 test cust road', 0);
