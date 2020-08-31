@@ -37,6 +37,7 @@ var Shop = (function () {
                 url: 'private/processCartContents.php',
                 success:function(resultData) {
                     window.localStorage.clear();
+                    window.location.reload();
                 },
                 error: function(data){
                     alert("Ajax Failed");
